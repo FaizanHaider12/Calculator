@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+    <preference name="EnableViewportScale" value="true"/>
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="cordova.js"></script>
+    <script>
+    function input(i)
+    {
+      document.getElementById("result").innerHTML += i;
+    }
+    function reset() {
+      document.getElementById("result").innerHTML = "";
+    }
+    function eq() {
+      var res = eval(document.getElementById("result").innerHTML);
+      document.getElementById("result").innerHTML = res;
+    }
+    function del() {
+      var max = (document.getElementById("result").innerHTML);
+      document.getElementById("result").innerHTML = max.substr(0,(max.length-1));
+    }
+    </script>
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+    <div id="main" style="height:100%;width:100%">
+    <ion-pane>
+      <ion-content>
+        <div class="card">
+          <center><h2><div style="height:40px;" type="text" id="result">
+          </div></h2></center>
+        </div>
+      </br>
+        <div class="button-bar">
+          <a class="button" id="but" value="0" onclick="reset()">Reset</a>
+          <a class="button" id="but" onclick="del()">Backspace</a>
+        </div>
+        <ion-slide-box on-slide-changed="slideHasChanged($index)">
+          <ion-slide>
+        <div class="button-bar">
+          <input class="button" value="1" id="numbers" onClick="input(value)">
+          <input class="button" value="2" id="numbers" onclick="input(value)">
+          <input class="button" value="3" id="numbers" onclick="input(value)">
+          <input class="button" value="/" onClick="input(value)">
+        </div>
+        <div class="button-bar">
+          <input class="button" value="4" id="numbers" onClick="input(value)">
+          <input class="button" value="5" id="numbers" onClick="input(value)">
+          <input class="button" value="6" id="numbers" onClick="input(value)">
+          <input class="button" value="*" onClick="input(value)">
+        </div>
+        <div class="button-bar">
+          <input class="button" value="7" id="numbers" onClick="input(value)">
+          <input class="button" value="8" id="numbers" onClick="input(value)">
+          <input class="button" value="9" id="numbers" onClick="input(value)">
+          <input class="button" value="-" onClick="input(value)">
+        </div>
+        <div class="button-bar">
+          <input class="button" value="." onClick="input(value)">
+          <input class="button" value="0" id="numbers" onClick="input(value)"></a>
+          <input class="button" value="=" onclick="eq()">
+          <input class="button" value="+" onclick="input(value)">
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="button-bar">
+          <input class="button" value="sin()" id="numbers" onClick="input(value);">
+          <a class="button"  id="numbers" onclick="cos()">cos</a>
+          <a class="button"  id="numbers" onclick="tan()">tan</a>
+        </div>
+          <div class="button-bar">
+          <input class="button"  value="(" id="numbers" onclick="input(value)">
+          <input class="button"  value=")" id="numbers" onclick="input(value)">
+        </div>
+        <div class="button-bar">
+          <a class="button"  id="numbers" onclick="expo()">^</a>
+        </div>
+      </ion-slide>
+      </ion-content>
+    </ion-pane>
+  </div>
+  </body>
+</html>
