@@ -43,8 +43,6 @@
           <a class="button" id="but" value="0" onclick="reset()">Reset</a>
           <a class="button" id="but" onclick="del()">Backspace</a>
         </div>
-        <ion-slide-box on-slide-changed="slideHasChanged($index)">
-          <ion-slide>
         <div class="button-bar">
           <input type="button" class="button" value="1" id="numbers" onClick="input(value)">
           <input type="button" class="button" value="2" id="numbers" onclick="input(value)">
@@ -69,21 +67,6 @@
           <input type="button" class="button" value="=" onclick="eq()">
           <input type="button" class="button" value="+" onclick="input(value)">
         </div>
-      </ion-slide>
-      <ion-slide>
-        <div class="button-bar">
-          <input type="button" class="button" value="sin()" id="numbers" onClick="input(value);">
-          <a class="button"  id="numbers" onclick="cos()">cos</a>
-          <a class="button"  id="numbers" onclick="tan()">tan</a>
-        </div>
-          <div class="button-bar">
-          <input class="button"  value="(" id="numbers" onclick="input(value)">
-          <input class="button"  value=")" id="numbers" onclick="input(value)">
-        </div>
-        <div class="button-bar">
-          <a class="button"  id="numbers" onclick="expo()">^</a>
-        </div>
-      </ion-slide>
       </ion-content>
     </ion-pane>
   </div>
